@@ -33,7 +33,7 @@ $ python
 >>> pysqldf = lambda q: sqldf(q, globals())
 >>> meat = load_meat()
 >>> births = load_births()
->>> print pysqldf("SELECT * FROM meat LIMIT 10;").head()
+>>> print(pysqldf("SELECT * FROM meat LIMIT 10;").head())
                   date  beef  veal  pork  lamb_and_mutton broilers other_chicken turkey
 0  1944-01-01 00:00:00   751    85  1280               89     None          None   None
 1  1944-02-01 00:00:00   713    77  1169               72     None          None   None
@@ -52,7 +52,7 @@ joins and aggregations are also supported
         births b
            ON m.date = b.date;"""
 >>> joined = pyqldf(q)
->>> print joined.head()
+>>> print(joined.head())
                     date    beef  births
 403  2012-07-01 00:00:00  2200.8  368450
 404  2012-08-01 00:00:00  2367.5  359554
@@ -67,7 +67,7 @@ joins and aggregations are also supported
               meat
            GROUP BY
               year;"
->>> print pysqldf(q).head()
+>>> print(pysqldf(q).head())
    year  beef_total
 0  1944        8801
 1  1945        9936
